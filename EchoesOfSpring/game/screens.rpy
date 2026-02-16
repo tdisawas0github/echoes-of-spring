@@ -377,6 +377,12 @@ screen preferences():
                     textbutton _("Transitions")       action InvertSelected(
                                                             Preference("transitions", "toggle"))
 
+                vbox:
+                    style_prefix "radio"
+                    label _("Language")
+                    textbutton "English"  action Language(None)
+                    textbutton "日本語"    action Language("japanese")
+
             null height 20
 
             hbox:
