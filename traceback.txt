@@ -1,0 +1,63 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000000000b7a4c50>: Failed to resolve 'www.renpy.org' ([Errno 11002] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.renpy.org', port=443): Max retries exceeded with url: /channels.json?version=8.5.2.26010301 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000000000b7a4c50>: Failed to resolve 'www.renpy.org' ([Errno 11002] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/interface.rpy", line 407, in error_handling
+  File "game/updater.rpy", line 243, in fetch_update_channels
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.renpy.org', port=443): Max retries exceeded with url: /channels.json?version=8.5.2.26010301 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000000000b7a4c50>: Failed to resolve 'www.renpy.org' ([Errno 11002] getaddrinfo failed)"))
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "lib/python3.12/urllib3/connection.py", line 196, in _new_conn
+  File "lib/python3.12/urllib3/util/connection.py", line 60, in create_connection
+  File "lib/python3.12/socket.py", line 976, in getaddrinfo
+socket.gaierror: [Errno 11002] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib/python3.12/urllib3/connectionpool.py", line 789, in urlopen
+  File "lib/python3.12/urllib3/connectionpool.py", line 490, in _make_request
+  File "lib/python3.12/urllib3/connectionpool.py", line 466, in _make_request
+  File "lib/python3.12/urllib3/connectionpool.py", line 1095, in _validate_conn
+  File "lib/python3.12/urllib3/connection.py", line 615, in connect
+  File "lib/python3.12/urllib3/connection.py", line 203, in _new_conn
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000000000b7a4c50>: Failed to resolve 'www.renpy.org' ([Errno 11002] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "lib/python3.12/requests/adapters.py", line 667, in send
+  File "lib/python3.12/urllib3/connectionpool.py", line 843, in urlopen
+  File "lib/python3.12/urllib3/util/retry.py", line 519, in increment
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.renpy.org', port=443): Max retries exceeded with url: /channels.json?version=8.5.2.26010301 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000000000b7a4c50>: Failed to resolve 'www.renpy.org' ([Errno 11002] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/interface.rpy", line 407, in error_handling
+  File "game/updater.rpy", line 243, in fetch_update_channels
+  File "lib/python3.12/requests/api.py", line 73, in get
+  File "lib/python3.12/requests/api.py", line 59, in request
+  File "lib/python3.12/requests/sessions.py", line 589, in request
+  File "lib/python3.12/requests/sessions.py", line 703, in send
+  File "lib/python3.12/requests/adapters.py", line 700, in send
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.renpy.org', port=443): Max retries exceeded with url: /channels.json?version=8.5.2.26010301 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000000000b7a4c50>: Failed to resolve 'www.renpy.org' ([Errno 11002] getaddrinfo failed)"))
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.2.26010301
+Ren'Py Launcher 8.5.2.26010301
+Tue Feb 17 05:20:43 2026
